@@ -16,6 +16,7 @@ public class LotDao {
     private EntityManager entityManager;
 
     public List<Lot> findAll() {
+        //hint: критерии обычно используют для построения сложных запросов. Для select all можно просто заюзать JQL "from Lot"
         CriteriaBuilder builder = this.entityManager.getCriteriaBuilder();
         CriteriaQuery<Lot> criteriaQuery = builder.createQuery(Lot.class);
         Root<Lot> root = criteriaQuery.from(Lot.class);
